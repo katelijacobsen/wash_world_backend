@@ -26,3 +26,12 @@ def validate_user_email(email):
     if not re.match(REGEX_USER_EMAIL, email):
         raise Exception("Invalid credentials")
     return email
+
+##############################
+USER_PASSWORD_MIN = 2
+USER_PASSWORD_MAX = 20
+REGEX_USER_PASSWORD = f"^.{{{USER_PASSWORD_MIN},{USER_PASSWORD_MAX}}}$"
+def validate_user_password(password):
+    if not re.match(REGEX_USER_PASSWORD, password):
+        raise Exception("Invalid credentials 02")
+    return password

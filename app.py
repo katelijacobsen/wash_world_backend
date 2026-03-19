@@ -42,7 +42,7 @@ def login():
     try:
         #TODO Validate data 
         user_email = config.validate_user_email(request.form.get("user_email", "").strip()) 
-        user_password = request.form.get("user_password", "").strip()        
+        user_password = config.validate_user_password(request.form.get("user_password", "").strip())        
         
         db, cursor = config.db()
         

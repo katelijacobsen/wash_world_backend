@@ -46,7 +46,7 @@ def login():
         
         db, cursor = config.db()
         
-        
+
         q = "SELECT * FROM users WHERE user_email = %s"
         
         cursor.execute(q, (user_email,))

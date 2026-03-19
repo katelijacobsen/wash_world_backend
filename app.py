@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify, session, redirect
-import x
+import config
 import uuid
 import time
 from flask_session import Session
@@ -18,3 +18,14 @@ Session(app)
 @app.route("/")
 def show_index():
     return render_template("index.html")
+
+
+####################################################
+#######################____APIs___##################
+####################################################
+
+@app.post("/api-get-name") #use dashes for url
+def api_get_name():
+    name = "Kat" #This comes from the database
+    data = {"name":name} #dictionary aka json
+    return jsonify(data)

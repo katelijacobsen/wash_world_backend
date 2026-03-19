@@ -1,0 +1,20 @@
+from flask import Flask, render_template, request, jsonify, session, redirect
+import x
+import uuid
+import time
+from flask_session import Session
+from werkzeug.security import generate_password_hash
+from werkzeug.security import check_password_hash
+
+from icecream import ic
+ic.configureOutput(prefix=f'_________ | ', includeContext=True)
+
+app = Flask(__name__)
+
+app.config['SESSION_TYPE'] = 'filesystem'
+Session(app)
+
+##############################
+@app.route("/")
+def show_index():
+    return render_template("index.html")

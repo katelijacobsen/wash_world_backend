@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
-# CORS(app, origins=["http://localhost:3000"])
+CORS(app, origins=["http://localhost:3000"])
 
 ##############################
 @app.route("/")
